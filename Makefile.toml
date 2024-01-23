@@ -70,3 +70,9 @@ duck -e "cp ./crates/bin/editor/assets ./docs"
 script = '''
 echo "LOCAL: [http://localhost:4000]" && basic-http-server -a 0.0.0.0:4000 ./docs/
 '''
+
+[tasks.compile_voxel_materials]
+script = '''
+cargo build -p flat --profile wasm-release --target wasm32-unknown-unknown
+wasm-opt -Oz --output target/wasm32-unknown-unknown/wasm-release/flat.wasm target/wasm32-unknown-unknown/wasm-release/flat.wasm
+'''

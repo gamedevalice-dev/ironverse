@@ -3,7 +3,8 @@
 resolver = "2"
 members = [
   "crates/bin/*",
-  "crates/lib/*"
+  "crates/lib/*",
+  "crates/voxel_materials/*"
 ]
 default-members = ["crates/bin/editor"]
 
